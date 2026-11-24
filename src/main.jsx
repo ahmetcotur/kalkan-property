@@ -1,0 +1,21 @@
+import React from 'react';
+import { createRoot, hydrateRoot } from 'react-dom/client';
+import '@astryxdesign/core/reset.css';
+import '@astryxdesign/core/astryx.css';
+import '@astryxdesign/theme-neutral/theme.css';
+import '@fontsource-variable/inter';
+import '@fontsource/instrument-serif/latin-400.css';
+import '@fontsource/instrument-serif/latin-400-italic.css';
+import '@fontsource/instrument-serif/latin-ext-400.css';
+import '@fontsource/instrument-serif/latin-ext-400-italic.css';
+import 'leaflet/dist/leaflet.css';
+import './styles.css';
+import App from './App.jsx';
+
+const root = document.getElementById('root');
+const rawPath = window.location.pathname;
+const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
+const path = (base && rawPath.startsWith(base)) ? rawPath.slice(base.length) || '/' : rawPath;
+const page = <App path={path} />;
+if (root.hasChildNodes()) hydrateRoot(root, page);
+else createRoot(root).render(page);

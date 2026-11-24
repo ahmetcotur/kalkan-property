@@ -1,0 +1,244 @@
+{
+  "buy": [
+    {
+      "title": "Villas & apartments",
+      "links": [
+        [
+          "Villas",
+          "/properties/villas"
+        ],
+        [
+          "Luxury Villas",
+          "/properties/luxury-villas"
+        ],
+        [
+          "Deluxe Villas",
+          "/properties/deluxe-villas"
+        ],
+        [
+          "Waterfront Villa",
+          "/properties/waterfront-villa"
+        ],
+        [
+          "Apartments",
+          "/properties/apartments"
+        ],
+        [
+          "Deluxe Apartments",
+          "/properties/deluxe-apartments"
+        ],
+        [
+          "Town Houses & Old Town",
+          "/properties/town-houses-old-town"
+        ]
+      ]
+    },
+    {
+      "title": "Land & development",
+      "links": [
+        [
+          "Land for Sale",
+          "/properties/land-for-sale"
+        ],
+        [
+          "New Developments",
+          "/properties/new-developments"
+        ],
+        [
+          "Off-Plan Project",
+          "/properties/off-plan-project"
+        ],
+        [
+          "Mountain Property",
+          "/properties/mountain-property"
+        ],
+        [
+          "Rural Property",
+          "/properties/rural-property"
+        ],
+        [
+          "Secluded Property",
+          "/properties/secluded-property"
+        ]
+      ]
+    },
+    {
+      "title": "Investment & commercial",
+      "links": [
+        [
+          "Turkish Citizenship Property",
+          "/properties/turkish-citizenship-property"
+        ],
+        [
+          "Commercial Property",
+          "/properties/commercial-property"
+        ],
+        [
+          "Countryside Investment",
+          "/properties/countryside-investment"
+        ],
+        [
+          "Hotel For Sale",
+          "/properties/hotel-for-sale"
+        ],
+        [
+          "Waterfront Hotel For Sale",
+          "/properties/waterfront-hotel-for-sale"
+        ]
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "title": "In and around Kalkan",
+      "links": [
+        [
+          "Kalkan Town Centre",
+          "/locations/kalkan-town-centre"
+        ],
+        [
+          "Kalamar",
+          "/locations/kalamar"
+        ],
+        [
+          "Kalamar Rd",
+          "/locations/kalamar-rd"
+        ],
+        [
+          "Kisla",
+          "/locations/kisla"
+        ],
+        [
+          "Kiziltas",
+          "/locations/kiziltas"
+        ],
+        [
+          "Komurluk",
+          "/locations/komurluk"
+        ],
+        [
+          "Kordere-Bezirgan Rd",
+          "/locations/kordere-bezirgan-rd"
+        ],
+        [
+          "Incebel-Kalkan",
+          "/locations/incebel-kalkan"
+        ],
+        [
+          "Lavanta",
+          "/locations/lavanta"
+        ],
+        [
+          "Ortaalan",
+          "/locations/ortaalan"
+        ],
+        [
+          "Club Patara",
+          "/locations/club-patara"
+        ]
+      ]
+    },
+    {
+      "title": "Villages & the coast",
+      "links": [
+        [
+          "Islamlar village",
+          "/locations/islamlar-village"
+        ],
+        [
+          "Kas",
+          "/locations/kas"
+        ],
+        [
+          "Palamut",
+          "/locations/palamut"
+        ],
+        [
+          "Patara(Gelemis)",
+          "/locations/patara-gelemis"
+        ],
+        [
+          "Patara-Seydikemer",
+          "/locations/patara-seydikemer"
+        ],
+        [
+          "Saribelen-Bezirgan Village",
+          "/locations/saribelen-bezirgan-village"
+        ],
+        [
+          "Uzumlu-Kas",
+          "/locations/uzumlu-kas"
+        ],
+        [
+          "Yali-Gelemis",
+          "/locations/yali-gelemis"
+        ],
+        [
+          "Yesilkoy",
+          "/locations/yesilkoy"
+        ],
+        [
+          "Near Seafront",
+          "/locations/near-seafront"
+        ],
+        [
+          "Near town centre",
+          "/locations/near-town-centre"
+        ],
+        [
+          "Rural",
+          "/locations/rural"
+        ],
+        [
+          "Secluded",
+          "/locations/secluded"
+        ]
+      ]
+    },
+    {
+      "title": "Across the region",
+      "links": [
+        [
+          "Bodrum - Yalıkavak",
+          "/locations/bodrum-yalikavak"
+        ],
+        [
+          "Çalış - Fethiye",
+          "/locations/calis-fethiye"
+        ],
+        [
+          "Faralya Village",
+          "/locations/faralya-village"
+        ],
+        [
+          "Fethiye",
+          "/locations/fethiye"
+        ],
+        [
+          "Gocek",
+          "/locations/gocek"
+        ],
+        [
+          "Kayakoy-Fethiye",
+          "/locations/kayakoy-fethiye"
+        ],
+        [
+          "Kemer-Antalya",
+          "/locations/kemer-antalya"
+        ],
+        [
+          "Ovacik",
+          "/locations/ovacik"
+        ],
+        [
+          "Sovalye Island-Fethiye",
+          "/locations/sovalye-island-fethiye"
+        ],
+        [
+          "Uzumlu-Fethiye",
+          "/locations/uzumlu-fethiye"
+        ]
+      ]
+    }
+  ]
+}

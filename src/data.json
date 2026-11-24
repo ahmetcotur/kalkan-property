@@ -1,0 +1,296 @@
+[
+  {
+    "id": "LV095",
+    "name": "Contemporary villa in Kalamar Bay",
+    "title": "5 bedroom luxury detached villa for sale near seafront in Kalamar, Kalkan",
+    "description": "A stylish 5-bedroom triplex with an annex apartment, graces the landscape just 200 meters away from the azure shores of the Mediterranean. Its prime location in Kalamar Bay offers a leisurely 15-minute stroll to Kalkan Old Town and Marina, ensuring the perfect blend of serenity and easy access to vibrant surroundings.",
+    "type": "Villa",
+    "area": "Kalamar",
+    "locations": [
+      "Kalamar",
+      "Kas",
+      "Near Seafront",
+      "Near town centre",
+      "Kalkan"
+    ],
+    "status": "For Sale",
+    "beds": 5,
+    "baths": 5,
+    "price": 599000,
+    "path": "/properties/5-bedroom-luxury-detached-villa-for-sale-near-seafront-in-kalamar-kalkan-lv095",
+    "photos": [
+      "/media/lv095.webp",
+      "/media/lv095-1.webp",
+      "/media/lv095-2.webp",
+      "/media/lv095-3.webp"
+    ]
+  },
+  {
+    "id": "DA249",
+    "name": "Sea-view apartment in Kalkan",
+    "title": "Three bedroom fully furnished apartment for sale with stunning seaviews over Kalkan Bay",
+    "description": "3 bedroom dublex spacious apartment for sale in Kalkan, Kas, Antalya with shared pool. The apartment enjoys an amazing seaviews over Kalkan Bay. For sale fully furnished and fitted\n\nPlease inquire for more details",
+    "type": "Apartment",
+    "area": "Kızıltaş",
+    "locations": [
+      "Kas",
+      "Kiziltas",
+      "Kalkan Town Centre",
+      "Near town centre"
+    ],
+    "status": "For Sale",
+    "beds": 3,
+    "baths": 3,
+    "price": 235000,
+    "path": "/properties/three-bedroom-fully-furnished-apartment-for-sale-with-stunning-seaviews-over-kalkan-bay-da249",
+    "photos": [
+      "/media/da249.webp",
+      "/media/da249-1.webp",
+      "/media/da249-2.webp",
+      "/media/da249-3.webp"
+    ]
+  },
+  {
+    "id": "LV034",
+    "name": "Private villa overlooking Kalkan Bay",
+    "title": "5 bedroom luxury private villa for sale overlooking entire Kalkan bay",
+    "description": "5 bedroom luxury private villa for sale overlooking entire Kalkan bay located in the upper part of Kizlltas area. Fully furnished anf fitted villa. Special design architecture. Secluded villa with private pool",
+    "type": "Villa",
+    "area": "Kızıltaş",
+    "locations": [
+      "Kiziltas",
+      "Near town centre",
+      "Kas",
+      "Kalkan"
+    ],
+    "status": "For Sale",
+    "beds": 5,
+    "baths": 5,
+    "price": 845000,
+    "path": "/properties/5-bedroom-luxury-private-villa-for-sale-overlooking-entire-kalkan-bay-lv034",
+    "photos": [
+      "/media/lv034.webp",
+      "/media/lv034-2.webp",
+      "/media/lv034-3.webp"
+    ]
+  },
+  {
+    "id": "DVL254",
+    "name": "Luxury villa near the Old Town",
+    "title": "Four bedroom Kalkan town centre luxury villa for sale with seaviews",
+    "description": "A beautifully decorated four-bedroom villa set in a peaceful and highly desirable area of Kalkan, just an 8-10 minute walk from the town centre. Thoughtfully furnished with antique and bespoke pieces by local craftsmen, the villa blends character, style and comfort, making it ideal for families or groups of friends.",
+    "type": "Villa",
+    "area": "Kalkan Town Centre",
+    "locations": [
+      "Kalkan Town Centre",
+      "Near Seafront",
+      "Ortaalan"
+    ],
+    "status": "For Sale",
+    "beds": 4,
+    "baths": 4,
+    "price": 499000,
+    "path": "/properties/four-bedroom-kalkan-town-centre-luxury-villa-for-sale-with-seaviews-dvl254",
+    "photos": [
+      "/media/dvl254.webp",
+      "/media/dvl254-1.webp",
+      "/media/dvl254-2.webp",
+      "/media/dvl254-3.webp"
+    ]
+  },
+  {
+    "id": "LV886",
+    "name": "Secluded villa in İslamlar",
+    "title": "Deluxe Three Bedroom Secluded Villa in Islamlar for Sale",
+    "description": "Located in İslamlar village, this special villa offers a patio with pool and sea views, as well as an outdoor pool, indoor pool and sauna. The air-conditioned property is 6 miles from Kalkan.",
+    "type": "Villa",
+    "area": "İslamlar Village",
+    "locations": [
+      "Islamlar Village",
+      "Kalkan"
+    ],
+    "status": "For Sale",
+    "beds": 3,
+    "baths": 3,
+    "price": 779000,
+    "path": "/properties/deluxe-three-bedroom-secluded-villa-in-islamlar-for-sale-lv886",
+    "photos": [
+      "/media/lv886.webp",
+      "/media/lv886-1.webp",
+      "/media/lv886-2.webp",
+      "/media/lv886-3.webp"
+    ]
+  },
+  {
+    "id": "L903",
+    "name": "Sea-view land in İslamlar",
+    "title": "Islamlar Land For Sale with Seaviews",
+    "description": "4500m2 Islamlar village land with mature pine trees, scrubs, some fruit trees. The land has seaviews.",
+    "type": "Land",
+    "area": "İslamlar Village",
+    "locations": [
+      "Islamlar Village",
+      "Countryside",
+      "Near town centre"
+    ],
+    "status": "For Sale",
+    "beds": null,
+    "baths": null,
+    "price": 185000,
+    "path": "/properties/islamlar-land-for-sale-with-seaviews-l903",
+    "photos": [
+      "/media/l903.webp",
+      "/media/l903-1.webp",
+      "/media/l903-2.webp",
+      "/media/l903-3.webp"
+    ]
+  },
+  {
+    "id": "DA086",
+    "name": "Stone house in Kalkan Old Town",
+    "title": "One bedroom Kalkan old house near seafront, amn amenities for sale.",
+    "description": "One bedroom Kalkan old town house with private roof terrace with seaviews. 5 min easy walk to many amenities including Kalkan local beach.\nYou can add a second room on the roof terrace if wished.\nFully furnished anf fitted.",
+    "type": "Townhouse",
+    "area": "Kalkan Town Centre",
+    "locations": [
+      "Kalkan Town Centre",
+      "Near Seafront",
+      "Kalkan"
+    ],
+    "status": "For Sale",
+    "beds": 1,
+    "baths": 2,
+    "price": 215000,
+    "path": "/properties/one-bedroom-kalkan-old-house-near-seafront-amn-amenities-for-sale-da086",
+    "photos": [
+      "/media/da086.webp",
+      "/media/da086-1.webp",
+      "/media/da086-2.webp",
+      "/media/da086-3.webp"
+    ]
+  },
+  {
+    "id": "DVL093",
+    "name": "Private pool villa in Ortaalan",
+    "title": "Three bedroom spacious villa with private pool near Kalkan town centre for sale",
+    "description": "Very spacious three bedroom centrally located detached Kalkan villa with private pool, garden, roof terrace with seaviews. Located in Ortaalan area near amany amenities the villa enjoys plenty of space inside and outside with its own private pool.\n\n425m2 land.\nLarge private pool\nGround floor large enough to add 4th room\nPrivate roof terrace\nSeaviews from all levels",
+    "type": "Villa",
+    "area": "Ortaalan",
+    "locations": [
+      "Kalkan Town Centre",
+      "Near Seafront",
+      "Ortaalan"
+    ],
+    "status": "For Sale - OIRO",
+    "beds": 3,
+    "baths": 3,
+    "price": 369000,
+    "path": "/properties/three-bedroom-spacious-villa-with-private-pool-near-kalkan-town-centre-for-sale-dvl093",
+    "photos": [
+      "/media/dvl093.webp",
+      "/media/dvl093-1.webp",
+      "/media/dvl093-2.webp",
+      "/media/dvl093-3.webp"
+    ]
+  },
+  {
+    "id": "DVL095",
+    "name": "Modern villa above Kalkan Bay",
+    "title": "Three Bedroom Modern Villa with beautiful seaviews for sale in Kalkan,Kas",
+    "description": "Three en-suite bedroom detached villa with private pool, garden, roof terrace, fully furnished and fitted located in Kiziltas area overloking Kalkan bay.",
+    "type": "Villa",
+    "area": "Kızıltaş",
+    "locations": [
+      "Kiziltas",
+      "Near Seafront",
+      "Near town centre",
+      "Kalkan"
+    ],
+    "status": "For Sale",
+    "beds": 3,
+    "baths": 3,
+    "price": 459000,
+    "path": "/properties/three-bedroom-modern-villa-with-beautiful-seaviews-for-sale-in-kalkankas-dvl095",
+    "photos": [
+      "/media/dvl095.webp",
+      "/media/dvl095-1.webp",
+      "/media/dvl095-2.webp",
+      "/media/dvl095-3.webp"
+    ]
+  },
+  {
+    "id": "DA066",
+    "name": "Seafront apartment in Kalamar",
+    "title": "One Bedroom Exquisite Seafront Apartment with Direct Beach Access in Kalkan",
+    "description": "Exquisite Seafront Apartment with Direct Beach Access in Kalamar Bay. Nestled just 100 meters from the pristine waters of Kalamar Bay, this exquisite seafront apartment presents a unique opportunity to own a piece of paradise in one of Turkey's most coveted coastal regions. Offering direct beach access and panoramic views of the sea from every corner, this property is not just a  home; it's a gateway to a luxurious lifestyle by the sea.\nKey Features\nDirect Beach Access: Step straight from your door onto the sand; the beach is just a brief walk away.",
+    "type": "Apartment",
+    "area": "Kalamar",
+    "locations": [
+      "Kalamar",
+      "Kas",
+      "Near Seafront",
+      "Near town centre",
+      "Kalkan"
+    ],
+    "status": "For Sale",
+    "beds": 1,
+    "baths": 1,
+    "price": 225000,
+    "path": "/properties/one-bedroom-exquisite-seafront-apartment-with-direct-beach-access-in-kalkan-da066",
+    "photos": [
+      "/media/da066.webp",
+      "/media/da066-1.webp",
+      "/media/da066-2.webp",
+      "/media/da066-3.webp"
+    ]
+  },
+  {
+    "id": "ISV793",
+    "name": "Pine forest plot with sea views",
+    "title": "Land in pine forest with seaviews for sale in Islamlar Village",
+    "description": "It is absolutely most private and special property we have ideal for those seeking for something peaceful, green and very clean environment surrounded by pine forests.",
+    "type": "Land",
+    "area": "İslamlar Village",
+    "locations": [
+      "Islamlar Village",
+      "Rural",
+      "Near town centre"
+    ],
+    "status": "For Sale",
+    "beds": 5,
+    "baths": 4,
+    "price": 251806,
+    "path": "/properties/land-in-pine-forest-with-seaviews-for-sale-in-islamlar-village-isv793",
+    "photos": [
+      "/media/isv793.webp",
+      "/media/isv793-1.webp",
+      "/media/isv793-2.webp",
+      "/media/isv793-3.webp"
+    ]
+  },
+  {
+    "id": "DA023",
+    "name": "Contemporary three-bedroom apartment",
+    "title": "3 bedroom Luxury, Brandnew Apartments for sale in Kalkan with Guaranteed Seaviews",
+    "description": "Luxurious 3-bed Kalkan apartment for sale! Stunning, guaranteed sea views, large pool, private parking. Prime Ortaalan location overlooking Kalamar Bay.",
+    "type": "Apartment",
+    "area": "Kalamar",
+    "locations": [
+      "Kalamar",
+      "Kalkan Town Centre",
+      "Ortaalan",
+      "Kalkan"
+    ],
+    "status": "For Sale",
+    "beds": 3,
+    "baths": 3,
+    "price": 249900,
+    "path": "/properties/3-bedroom-luxury-brandnew-apartments-for-sale-in-kalkan-with-guaranteed-seaviews-da023",
+    "photos": [
+      "/media/da023.webp",
+      "/media/da023-1.webp",
+      "/media/da023-2.webp",
+      "/media/da023-3.webp"
+    ]
+  }
+]

@@ -1,0 +1,716 @@
+{
+  "/land": {
+    "name": "Land",
+    "ids": [
+      "L903",
+      "ISV793"
+    ]
+  },
+  "/locations/bodrum-yalikavak": {
+    "name": "Bodrum - Yalıkavak",
+    "ids": [
+      "BOD964"
+    ]
+  },
+  "/locations/calis-fethiye": {
+    "name": "Çalış - Fethiye",
+    "ids": []
+  },
+  "/locations/club-patara": {
+    "name": "Club Patara",
+    "ids": []
+  },
+  "/locations/faralya-village": {
+    "name": "Faralya Village",
+    "ids": []
+  },
+  "/locations/fethiye": {
+    "name": "Fethiye",
+    "ids": [
+      "VL032"
+    ]
+  },
+  "/locations/gocek": {
+    "name": "Gocek",
+    "ids": []
+  },
+  "/locations/incebel-kalkan": {
+    "name": "Incebel-Kalkan",
+    "ids": []
+  },
+  "/locations/islamlar-village": {
+    "name": "Islamlar village",
+    "ids": [
+      "LV886",
+      "L903",
+      "DVL838",
+      "ISV793",
+      "DVL891",
+      "ISV747",
+      "DVL900",
+      "DVL702",
+      "LV667",
+      "LV770"
+    ]
+  },
+  "/locations/kalamar-rd": {
+    "name": "Kalamar Rd",
+    "ids": [
+      "DA082",
+      "DVL654",
+      "DVL950",
+      "DVL730"
+    ]
+  },
+  "/locations/kalamar": {
+    "name": "Kalamar",
+    "ids": [
+      "LV095",
+      "DVL275",
+      "DA066",
+      "LV016",
+      "DA023",
+      "DVL821",
+      "DVL654",
+      "DVL743",
+      "LV746",
+      "LV453",
+      "DVL708",
+      "DVL730"
+    ]
+  },
+  "/locations/kalkan-town-centre": {
+    "name": "Kalkan Town Centre",
+    "ids": [
+      "DA086",
+      "DVL254",
+      "DA249",
+      "DVL275",
+      "DA082",
+      "LV101",
+      "DA023",
+      "LV489",
+      "DVL876"
+    ]
+  },
+  "/locations/kas": {
+    "name": "Kas",
+    "ids": [
+      "LV095",
+      "LV034",
+      "DVL074",
+      "DA249",
+      "DVL275",
+      "DA066",
+      "LV016",
+      "DVL654",
+      "DVL847",
+      "C106",
+      "DA043"
+    ]
+  },
+  "/locations/kayakoy-fethiye": {
+    "name": "Kayakoy-Fethiye",
+    "ids": []
+  },
+  "/locations/kemer-antalya": {
+    "name": "Kemer-Antalya",
+    "ids": []
+  },
+  "/locations/kisla": {
+    "name": "Kisla",
+    "ids": [
+      "LV093",
+      "LV474",
+      "LV926",
+      "LV567",
+      "DVL053",
+      "DVL347",
+      "DA041"
+    ]
+  },
+  "/locations/kiziltas": {
+    "name": "Kiziltas",
+    "ids": [
+      "LV034",
+      "DVL074",
+      "DA249",
+      "DVL095",
+      "LV345",
+      "LV790",
+      "DVL933",
+      "DA860",
+      "LV925",
+      "DA148",
+      "DVL907",
+      "DVL690",
+      "DVL871"
+    ]
+  },
+  "/locations/komurluk": {
+    "name": "Komurluk",
+    "ids": [
+      "LV567",
+      "LV107",
+      "LV046"
+    ]
+  },
+  "/locations/kordere-bezirgan-rd": {
+    "name": "Kordere-Bezirgan Rd",
+    "ids": []
+  },
+  "/locations/lavanta": {
+    "name": "Lavanta",
+    "ids": [
+      "DVL847"
+    ]
+  },
+  "/locations/near-seafront": {
+    "name": "Near Seafront",
+    "ids": [
+      "LV095",
+      "DA086",
+      "DVL254",
+      "DVL299",
+      "DVL275",
+      "DA066",
+      "DVL095",
+      "LV101",
+      "LV093",
+      "DVL654",
+      "LV567",
+      "DA148",
+      "DVL950",
+      "DA043",
+      "DVL053",
+      "DVL871",
+      "DA041"
+    ]
+  },
+  "/locations/near-town-centre": {
+    "name": "Near town centre",
+    "ids": [
+      "LV095",
+      "LV034",
+      "DVL299",
+      "DA249",
+      "DA066",
+      "DVL095",
+      "DA082",
+      "VL032",
+      "LV016",
+      "L903",
+      "LV567",
+      "LV896",
+      "ISV793",
+      "LV107",
+      "DA860",
+      "LV925",
+      "DA798",
+      "LV850",
+      "DVL900",
+      "DA148",
+      "LV046",
+      "DA043",
+      "DVL871",
+      "DA041"
+    ]
+  },
+  "/locations/ortaalan": {
+    "name": "Ortaalan",
+    "ids": [
+      "DVL254",
+      "DVL299",
+      "DVL275",
+      "LV016",
+      "DA023",
+      "DVL847",
+      "LV896",
+      "LV489",
+      "DVL708",
+      "DA798",
+      "LV850",
+      "LV502",
+      "AP529",
+      "DVL950",
+      "DVL723"
+    ]
+  },
+  "/locations/ovacik": {
+    "name": "Ovacik",
+    "ids": []
+  },
+  "/locations/palamut": {
+    "name": "Palamut",
+    "ids": []
+  },
+  "/locations/patara-gelemis": {
+    "name": "Patara(Gelemis)",
+    "ids": []
+  },
+  "/locations/patara-seydikemer": {
+    "name": "Patara-Seydikemer",
+    "ids": [
+      "DVL889"
+    ]
+  },
+  "/locations/rural": {
+    "name": "Rural",
+    "ids": [
+      "DVL889",
+      "DVL838",
+      "ISV793",
+      "DVL891",
+      "ISV747",
+      "DVL900",
+      "LV667"
+    ]
+  },
+  "/locations/saribelen-bezirgan-village": {
+    "name": "Saribelen-Bezirgan Village",
+    "ids": []
+  },
+  "/locations/secluded": {
+    "name": "Secluded",
+    "ids": []
+  },
+  "/locations/sovalye-island-fethiye": {
+    "name": "Sovalye Island-Fethiye",
+    "ids": []
+  },
+  "/locations/uzumlu-fethiye": {
+    "name": "Uzumlu-Fethiye",
+    "ids": [
+      "VL032"
+    ]
+  },
+  "/locations/uzumlu-kas": {
+    "name": "Uzumlu-Kas",
+    "ids": [
+      "DVL229",
+      "DVL880"
+    ]
+  },
+  "/locations/yali-gelemis": {
+    "name": "Yali-Gelemis",
+    "ids": []
+  },
+  "/locations/yesilkoy": {
+    "name": "Yesilkoy",
+    "ids": []
+  },
+  "/properties/apartments": {
+    "name": "Apartments",
+    "ids": [
+      "DA086",
+      "DA249",
+      "DA066",
+      "DA082",
+      "DA023",
+      "DA860",
+      "DA798",
+      "DA148",
+      "AP529",
+      "DA043",
+      "DA041"
+    ]
+  },
+  "/properties/commercial-property": {
+    "name": "Commercial Property",
+    "ids": []
+  },
+  "/properties/countryside-investment": {
+    "name": "Countryside Investment",
+    "ids": [
+      "L903",
+      "LV770"
+    ]
+  },
+  "/properties/deluxe-apartments": {
+    "name": "Deluxe Apartments",
+    "ids": [
+      "DA086",
+      "DA249",
+      "DA066",
+      "DA082",
+      "DA023",
+      "DA860",
+      "DA798",
+      "DA148",
+      "DA043",
+      "DA041"
+    ]
+  },
+  "/properties/deluxe-villas": {
+    "name": "Deluxe Villas",
+    "ids": [
+      "LV095",
+      "DVL254",
+      "LV034",
+      "DVL299",
+      "DVL074",
+      "DVL275",
+      "DVL095",
+      "VL032",
+      "LV016",
+      "DVL821",
+      "LV886",
+      "DVL889",
+      "DVL654",
+      "DVL847",
+      "DVL838",
+      "LV345",
+      "LV474",
+      "LV790",
+      "DVL229",
+      "LV926",
+      "LV567",
+      "DVL880",
+      "LV896",
+      "BOD964",
+      "DVL933",
+      "ISV793",
+      "DVL891",
+      "DVL743",
+      "LV746",
+      "LV107",
+      "ISV747",
+      "LV489",
+      "DVL708",
+      "LV925",
+      "LV850",
+      "DVL900",
+      "LV502",
+      "DVL907",
+      "DVL690",
+      "DVL876",
+      "DVL950",
+      "DVL723",
+      "DVL702",
+      "LV667",
+      "LV046",
+      "LV770",
+      "DVL053",
+      "DVL347",
+      "DVL871",
+      "DVL730"
+    ]
+  },
+  "/properties/hotel-for-sale": {
+    "name": "Hotel For Sale",
+    "ids": [
+      "C106"
+    ]
+  },
+  "/properties/land-for-sale": {
+    "name": "Land for Sale",
+    "ids": [
+      "L903",
+      "ISV793"
+    ]
+  },
+  "/properties/luxury-villas": {
+    "name": "Luxury Villas",
+    "ids": [
+      "LV095",
+      "DVL254",
+      "DVL299",
+      "DVL074",
+      "DVL275",
+      "DVL095",
+      "VL032",
+      "LV016",
+      "DVL821",
+      "LV886",
+      "DVL889",
+      "DVL654",
+      "DVL847",
+      "DVL838",
+      "LV345",
+      "LV474",
+      "LV790",
+      "DVL229",
+      "LV926",
+      "LV567",
+      "DVL880",
+      "LV896",
+      "BOD964",
+      "DVL933",
+      "DVL891",
+      "DVL743",
+      "LV746",
+      "LV107",
+      "ISV747",
+      "LV453",
+      "LV489",
+      "DVL708",
+      "LV925",
+      "LV850",
+      "DVL900",
+      "LV502",
+      "DVL907",
+      "DVL690",
+      "DVL876",
+      "DVL950",
+      "DVL723",
+      "DVL702",
+      "LV667",
+      "LV046",
+      "LV770",
+      "DVL053",
+      "DVL347",
+      "DVL871",
+      "DVL730"
+    ]
+  },
+  "/properties/mountain-property": {
+    "name": "Mountain Property",
+    "ids": [
+      "DVL900"
+    ]
+  },
+  "/properties/new-developments": {
+    "name": "New Developments",
+    "ids": [
+      "DVL299",
+      "VL032"
+    ]
+  },
+  "/properties/off-plan-project": {
+    "name": "Off-Plan Project",
+    "ids": []
+  },
+  "/properties/rural-property": {
+    "name": "Rural Property",
+    "ids": []
+  },
+  "/properties/secluded-property": {
+    "name": "Secluded Property",
+    "ids": [
+      "LV034",
+      "LV886"
+    ]
+  },
+  "/properties/town-houses-old-town": {
+    "name": "Town Houses & Old Town",
+    "ids": [
+      "DA086"
+    ]
+  },
+  "/properties/turkish-citizenship-property": {
+    "name": "Turkish Citizenship Property",
+    "ids": [
+      "DA066",
+      "LV016",
+      "DVL654",
+      "DVL847",
+      "LV474",
+      "LV896",
+      "DVL933",
+      "C106",
+      "LV453",
+      "LV489",
+      "LV925",
+      "LV502",
+      "DA148",
+      "DVL950",
+      "DVL723",
+      "DVL053"
+    ]
+  },
+  "/properties/villas": {
+    "name": "Villas",
+    "ids": [
+      "LV095",
+      "DA086",
+      "DVL254",
+      "DVL299",
+      "DVL074",
+      "DVL275",
+      "DVL095",
+      "VL032",
+      "DVL821",
+      "LV886",
+      "DVL889",
+      "DVL654",
+      "DVL847",
+      "DVL838",
+      "LV345",
+      "LV474",
+      "LV790",
+      "DVL229",
+      "LV926",
+      "LV567",
+      "DVL880",
+      "LV896",
+      "BOD964",
+      "DVL933",
+      "DVL891",
+      "DVL743",
+      "LV746",
+      "LV107",
+      "ISV747",
+      "LV489",
+      "DVL708",
+      "LV925",
+      "LV850",
+      "DVL900",
+      "LV502",
+      "DVL907",
+      "DVL690",
+      "DVL876",
+      "DVL950",
+      "DVL723",
+      "DVL702",
+      "LV667",
+      "LV046",
+      "LV770",
+      "DVL053",
+      "DVL347",
+      "DVL871",
+      "DVL730"
+    ]
+  },
+  "/properties/waterfront-hotel-for-sale": {
+    "name": "Waterfront Hotel For Sale",
+    "ids": [
+      "C106"
+    ]
+  },
+  "/properties/waterfront-villa": {
+    "name": "Waterfront Villa",
+    "ids": [
+      "C106"
+    ]
+  },
+  "/property-for-rent": {
+    "name": "Property For Rent",
+    "ids": [
+      "DA01R",
+      "DA092",
+      "DA001R",
+      "LV940"
+    ]
+  },
+  "/property-for-sale": {
+    "name": "Property For Sale",
+    "ids": [
+      "LV095",
+      "DA086",
+      "DVL254",
+      "LV034",
+      "DVL299",
+      "DVL074",
+      "DA249",
+      "DVL275",
+      "DA066",
+      "DVL095"
+    ]
+  },
+  "/kalkan": {
+    "name": "Kalkan",
+    "ids": [
+      "DA086",
+      "DVL254",
+      "DA249",
+      "DVL275",
+      "DA082",
+      "LV101",
+      "DA023",
+      "LV489",
+      "DVL876"
+    ]
+  },
+  "/properties": {
+    "name": "Properties",
+    "ids": [
+      "LV095",
+      "DA086",
+      "DVL254",
+      "LV034",
+      "DVL299",
+      "DVL074",
+      "DA249",
+      "DVL275",
+      "DA066",
+      "DVL095",
+      "DA082",
+      "VL032",
+      "LV016",
+      "LV101",
+      "LV093",
+      "DA023",
+      "DVL821",
+      "LV886",
+      "L903",
+      "DVL889",
+      "DVL654",
+      "DVL847",
+      "DVL838",
+      "LV345",
+      "LV474",
+      "LV790",
+      "DVL229",
+      "LV926",
+      "LV567",
+      "DVL880",
+      "LV896",
+      "BOD964",
+      "DVL933",
+      "ISV793",
+      "C106",
+      "DVL891",
+      "DVL743",
+      "LV746",
+      "LV107",
+      "ISV747",
+      "DA860",
+      "LV453",
+      "LV489",
+      "DVL708",
+      "LV925",
+      "DA798",
+      "LV850",
+      "DVL900",
+      "LV502",
+      "DA148",
+      "DVL907",
+      "DVL690",
+      "DVL876",
+      "AP529",
+      "DVL950",
+      "DVL723",
+      "DVL702",
+      "LV667",
+      "LV046",
+      "DA043",
+      "LV770",
+      "DVL053",
+      "DVL347",
+      "DVL871",
+      "DA041",
+      "DVL730"
+    ]
+  },
+  "/turkish-citizenship": {
+    "name": "Turkish Citizenship",
+    "ids": [
+      "DA066",
+      "LV016",
+      "DVL654",
+      "DVL847",
+      "LV474",
+      "LV896",
+      "DVL933",
+      "C106",
+      "LV453",
+      "LV489",
+      "LV925",
+      "LV502",
+      "DA148",
+      "DVL950",
+      "DVL723",
+      "DVL053"
+    ]
+  }
+}

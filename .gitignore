@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.render/
+*.zip
+.DS_Store
