@@ -4,28 +4,29 @@ import {ChevronDown, Heart, Menu, X} from 'lucide-react';
 import liveMenu from './menu-data.json';
 
 import {buyGuidePath} from './editorial.js';
+import {withBase} from './routes.js';
 const menu = {
   buy: {
     label:'Buy', navLabel:'Property for sale', title:'Find a home.',
-    path:'/properties', action:'View all properties', image:'/media/guide.webp', groups:liveMenu.buy,
+    path:withBase('/properties'), action:'View all properties', image:withBase('/media/guide.webp'), groups:liveMenu.buy,
   },
   locations: {
     label:'Locations', navLabel:'Locations', title:'Explore the coast.',
-    path:'/locations', action:'View all locations', image:'/media/da249.webp', groups:liveMenu.locations,
+    path:withBase('/locations'), action:'View all locations', image:withBase('/media/da249.webp'), groups:liveMenu.locations,
   },
   guides: {
     label:'Guides & services', navLabel:'Guides and services', title:'Local knowledge.',
-    path:buyGuidePath, action:'Read the buying guide', image:'/media/da086.webp', groups:[
-      {title:'Plan your purchase',links:[['Buying in Kalkan',buyGuidePath],['Legal matters','/legal-matters'],['FAQ','/faq'],['Blog','/blogs']]},
-      {title:'Work with Mavi',links:[['Our services','/our-services'],['About Mavi','/about-us'],['Testimonials','/testimonials'],['Quick inquiry','/quick-inquiry'],['Contact us','/contact-us']]},
-      {title:'Explore the market',links:[['Land','/land'],['Property for rent','/property-for-rent'],['Turkish citizenship','/turkish-citizenship']]},
+    path:withBase(buyGuidePath), action:'Read the buying guide', image:withBase('/media/da086.webp'), groups:[
+      {title:'Plan your purchase',links:[['Buying in Kalkan',withBase(buyGuidePath)],['Legal matters',withBase('/legal-matters')],['FAQ',withBase('/faq')],['Blog',withBase('/blogs')]]},
+      {title:'Work with Mavi',links:[['Our services',withBase('/our-services')],['About Mavi',withBase('/about-us')],['Testimonials',withBase('/testimonials')],['Quick inquiry',withBase('/quick-inquiry')],['Contact us',withBase('/contact-us')]]},
+      {title:'Explore the market',links:[['Land',withBase('/land')],['Property for rent',withBase('/property-for-rent')],['Turkish citizenship',withBase('/turkish-citizenship')]]},
     ],
   },
 };
 
 export function Brand() {
-  return <a className="brand" href="/" aria-label="Mavi Real Estate home">
-    <img className="legacy-logo" src="/media/mavi-logo.webp" width="105" height="56" alt="Mavi Real Estate"/>
+  return <a className="brand" href={withBase('/')} aria-label="Mavi Real Estate home">
+    <img className="legacy-logo" src={withBase('/media/mavi-logo.webp')} width="105" height="56" alt="Mavi Real Estate"/>
   </a>;
 }
 
@@ -39,7 +40,7 @@ function MegaPanel({id, isOpen}) {
       </a>
       <div className="mega-columns">{item.groups.map(group => <div className="mega-group" key={group.title}>
         <h2>{group.title}</h2>
-        <ul>{group.links.map(([label,path]) => <li key={path}><a href={path}>{label}</a></li>)}</ul>
+        <ul>{group.links.map(([label,path]) => <li key={path}><a href={withBase(path)}>{label}</a></li>)}</ul>
       </div>)}</div>
     </div>
   </div>;
@@ -103,13 +104,13 @@ export default function Header({count, onSaved, path}) {
       <nav id="nav" className={mobileOpen ? 'nav open' : 'nav'} aria-label="Main navigation">
         {navGroup('buy')}
         {navGroup('locations')}
-        <a href="/property-for-rent">Rent</a>
+        <a href={withBase('/property-for-rent')}>Rent</a>
         {navGroup('guides')}
-        <a className="mobile-contact" href="/contact-us">Contact us</a>
+        <a className="mobile-contact" href={withBase('/contact-us')}>Contact us</a>
       </nav>
       <div className="top-actions">
         <button className="icon-button bookmark" type="button" aria-label={'Saved listings' + (count ? ' (' + count + ')' : '')} onClick={onSaved}><Heart size={20}/>{count > 0 && <span className="count">{count}</span>}</button>
-        <Button variant="primary" className="action contact" label="Contact us" href="/contact-us"/>
+        <Button variant="primary" className="action contact" label="Contact us" href={withBase('/contact-us')}/>
       </div>
     </div>
   </header>;

@@ -68,8 +68,8 @@ const base = (process.env.BASE_PATH || '').replace(/\/$/, '');
 function prefixPaths(html, base) {
   if (!base) return html;
   const escapedBase = base.replace(/^\//, '');
-  return html.replace(/(href|src)=["']\/([^"']*)["']/g, (match, attr, path) => {
-    if (path.startsWith(escapedBase + '/') || path.startsWith('/') || path.startsWith('http:') || path.startsWith('https:')) {
+  return html.replace(/(href|src|action)=["']\/([^"']*)["']/g, (match, attr, path) => {
+    if (path.startsWith(escapedBase + '/') || path === escapedBase || path.startsWith('/') || path.startsWith('http:') || path.startsWith('https:')) {
       return match;
     }
     return `${attr}="${base}/${path}"`;

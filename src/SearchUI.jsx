@@ -1,7 +1,7 @@
 import React, {useEffect, useId, useRef, useState} from 'react';
 import {Button} from '@astryxdesign/core/Button';
 import {Building2, BedDouble, Check, ChevronDown, House, MapPin, Minus, Mountain, Plus, Search, SlidersHorizontal, Wallet, X} from 'lucide-react';
-import {categories, collectionListings, currency, findRoute, listings, locations} from './routes.js';
+import {categories, collectionListings, currency, findRoute, listings, locations, withBase} from './routes.js';
 
 export const typeIcons = {Villa:House, Apartment:Building2, Land:Mountain, Townhouse:House, Commercial:Building2, Hotel:Building2};
 export const emptyFilters = {type:'', area:'', min_price:'', budget:'', beds:'', baths:''};
@@ -92,6 +92,25 @@ function useDisclosure() {
   }, [open]);
   return {
     open, root, close, direction,
+    goTo(key) {
+      if (!key) {
+        close();
+        return;
+      }
+      const button = root.current?.querySelector('.select-' + key + ' .select-trigger');
+      if (button) {
+        trigger.current = button;
+        const rect = button.getBoundingClientRect();
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const spaceAbove = rect.top;
+        const prefersUp = spaceBelow < 330 && spaceAbove > 240;
+        setDirection(curr => ({ ...curr, [key]: prefersUp ? 'up' : 'down' }));
+        button.focus({ preventScroll: true });
+        setOpen(key);
+      } else {
+        setOpen(key);
+      }
+    },
     toggle(key, event) {
       trigger.current = event.currentTarget;
       if (open === key) {
@@ -254,18 +273,51 @@ function Rooms({filters, setFilters, close}) {
   </>;
 }
 
-export function SearchForm({initial=emptyFilters, onApply, hero, action='/properties', inventory=salesInventory}) {
+export function SearchForm({initial=emptyFilters, onApply, hero, action=withBase('/properties'), inventory=salesInventory}) {
   const [filters,setFilters] = useState(initial);
   const control = useDisclosure();
+  const flowTimer = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      if (flowTimer.current) clearTimeout(flowTimer.current);
+    };
+  }, []);
+
   useEffect(() => setFilters(initial), [initial]);
+
+  function advanceFrom(name) {
+    const nextSteps = {
+      type: 'area',
+      area: 'budget',
+      budget: 'rooms',
+    };
+    const nextStep = nextSteps[name];
+    if (nextStep) {
+      if (flowTimer.current) clearTimeout(flowTimer.current);
+      flowTimer.current = setTimeout(() => {
+        control.goTo(nextStep);
+      }, 140);
+    } else {
+      control.close(true);
+    }
+  }
+
   function choose(name,value) {
     setFilters(current => ({...current,[name]:value}));
-    control.close(true);
+    advanceFrom(name);
   }
   function applyBudget(minimum, maximum) {
     setFilters(current => ({...current,min_price:minimum,budget:maximum}));
-    control.close(true);
+    advanceFrom('budget');
   }
+  function finishRooms() {
+    if (flowTimer.current) clearTimeout(flowTimer.current);
+    control.close();
+    const button = control.root.current?.querySelector('.search-button');
+    if (button) button.focus({preventScroll:true});
+  }
+
   const rooms = [filters.beds && filters.beds + (filters.beds === '1' ? ' bed' : ' beds'), filters.baths && filters.baths + (filters.baths === '1' ? ' bath' : ' baths')].filter(Boolean).join(' · ');
   return <form ref={control.root} className={'search-form' + (hero ? ' hero-search' : '')} action={action} method="get"
     onBlur={control.onBlur} onKeyDown={control.onKeyDown} onSubmit={onApply ? event => {event.preventDefault();onApply(filters);} : undefined}>
@@ -284,7 +336,7 @@ export function SearchForm({initial=emptyFilters, onApply, hero, action='/proper
       <BudgetOptions filters={filters} inventory={inventory} apply={applyBudget}/>
     </Selector>
     <Selector name="rooms" label="Rooms" icon={BedDouble} value={rooms || 'Any'} control={control}>
-      <Rooms filters={filters} setFilters={setFilters} close={control.close}/>
+      <Rooms filters={filters} setFilters={setFilters} close={finishRooms}/>
     </Selector>
     <Button type="submit" variant="primary" className="action search-button" label="Search properties" icon={<Search size={19}/>}/>
   </form>;
