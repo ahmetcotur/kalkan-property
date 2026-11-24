@@ -69,7 +69,28 @@ function useDisclosure() {
       if (!root.current?.contains(event.target)) setOpen('');
     }
     document.addEventListener('pointerdown', outside);
-    return () => document.removeEventListener('pointerdown', outside);
+
+    const frameId = window.requestAnimationFrame(() => {
+      const panel = root.current?.querySelector('.selector-panel:not([hidden])');
+      if (panel && root.current) {
+        const formRect = root.current.getBoundingClientRect();
+        const panelRect = panel.getBoundingClientRect();
+        const margin = 28;
+        const overflow = (panelRect.bottom + margin) - window.innerHeight;
+        if (overflow > 0) {
+          const maxScroll = Math.max(0, formRect.top - 84);
+          const scrollAmount = Math.min(overflow, maxScroll);
+          if (scrollAmount > 4) {
+            window.scrollBy({ top: Math.ceil(scrollAmount), behavior: 'smooth' });
+          }
+        }
+      }
+    });
+
+    return () => {
+      document.removeEventListener('pointerdown', outside);
+      window.cancelAnimationFrame(frameId);
+    };
   }, [open]);
   return {
     open, root, close,

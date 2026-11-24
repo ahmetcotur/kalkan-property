@@ -345,7 +345,7 @@ dialog::backdrop{background:#05182a94}
 .select-summary strong{font-size:.81rem;color:var(--ink);line-height:1.25}
 .select-summary>span{color:var(--muted);font-size:.86rem;margin-top:3px}
 .search-button.astryx-button{min-height:54px;align-self:center;padding-inline:22px}
-.selector-panel{position:absolute;top:calc(100% + 8px);left:0;width:min(345px,calc(100vw - 42px));padding:14px;color:var(--ink);background:var(--white);border:1px solid #b9c3d8;box-shadow:0 14px 38px #0c194033;z-index:5;animation:mega-enter .15s ease-out}
+.selector-panel{position:absolute;top:calc(100% + 8px);left:0;width:min(345px,calc(100vw - 42px));padding:14px;color:var(--ink);background:var(--white);border:1px solid #b9c3d8;box-shadow:0 14px 38px #0c194033;z-index:5;animation:mega-enter .15s ease-out;max-height:calc(100dvh - 110px);overflow-y:auto;overscroll-behavior:contain}
 .selector-panel[hidden]{display:none}
 .select-budget .selector-panel,.select-rooms .selector-panel,.select-sort .selector-panel{left:auto;right:0}
 .selector-heading{font-weight:660;font-size:.875rem;margin:1px 0 9px}
