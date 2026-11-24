@@ -14,7 +14,7 @@ import InquiryForm from './InquiryForm.jsx';
 import testimonials from './testimonials.json';
 import {buyGuidePath} from './editorial.js';
 import liveMenu from './menu-data.json';
-import {useEditorialMotion, useImageMotion} from './motion.js';
+import {useImageMotion, usePageMotion} from './motion.js';
 import {emptyFilters, matchesBudget, matchesPreferences, readFilters, SearchForm, SortPicker} from './SearchUI.jsx';
 
 const mavi = defineTheme({name: 'mavi', tokens: {'--color-accent': ['#2245e0', '#9cb2ff']}});
@@ -87,7 +87,7 @@ function Places() {
 function Home({saved, toggle}) {
   const [type, setType] = useState('');
   const home = useRef(null);
-  useEditorialMotion(home);
+  usePageMotion(home, [type]);
   const items = type ? listings.filter(item => item.type === type).slice(0, 3) : featured;
   const viewAll = categories.find(item => item.type === type)?.path ?? withBase('/properties');
   return <div className="home" ref={home}>
@@ -103,13 +103,13 @@ function Home({saved, toggle}) {
       </div>
       <PropertyGrid items={items} saved={saved} toggle={toggle}/>
     </section>
-    <section className="area-section">
+    <section className="area-section" data-reveal>
       <div className="container">
         <div className="section-heading" data-reveal><div><p className="kicker">THE NEIGHBOURHOODS</p><h2>A place in <em>Kalkan.</em></h2></div><Button label="Explore all locations" className="quiet-action" href={withBase('/locations')}/></div>
         <Places/>
       </div>
     </section>
-    <section className="container local-section">
+    <section className="container local-section" data-reveal>
       <div className="local-photo"><img src={withBase('/media/kemal.webp')} alt="Kemal at Mavi Real Estate" loading="lazy"/></div>
       <div data-reveal><p className="kicker">YOUR LOCAL TEAM</p><h2>Talk to someone who <em>knows Kalkan.</em></h2><p>Ask Kemal about a property, arrange a viewing, or discuss which part of Kalkan is right for you.</p>
       <Button label="Contact Mavi Real Estate" variant="primary" className="action" href={withBase('/contact-us')} icon={<MessageCircle size={18}/>}/></div>
@@ -146,6 +146,7 @@ function AreaGuide({route}) {
 }
 
 function Collection({route, saved, toggle}) {
+  const pageRef = useRef(null);
   const [filters, setFilters] = useState(emptyFilters);
   const [sort, setSort] = useState('');
   const [view, setView] = useState('grid');
@@ -170,6 +171,7 @@ function Collection({route, saved, toggle}) {
     if (!a.price || !b.price) return Number(!a.price) - Number(!b.price);
     return sort === 'asc' ? a.price - b.price : b.price - a.price;
   });
+  usePageMotion(pageRef, [route.rawPath || route.path, items.length, view, sort]);
   function apply(values) {
     const params = new URLSearchParams(Object.entries(values).filter(([,value]) => value));
     const next = withBase(route.rawPath || route.path) + (params.size ? '?' + params : '');
@@ -178,23 +180,23 @@ function Collection({route, saved, toggle}) {
   }
   const parent = route.area ? {name:'Locations',path:withBase('/locations')} : route.category ? {name:'Properties',path:withBase('/properties')} : null;
   const categoryLabel = route.area ? 'EXPLORE THE AREA' : route.path === '/property-for-rent' ? 'THE RENTAL PORTFOLIO' : 'THE SALES PORTFOLIO';
-  return <main id="main" className="collection-page">
+  return <main id="main" className="collection-page" ref={pageRef}>
     <section className="collection-banner">
       <div className="collection-cover"><img src={route.image} alt="" fetchPriority="high"/></div>
-      <div className="container collection-intro">
+      <div className="container collection-intro" data-intro>
         <Breadcrumb label={route.heading} parent={parent}/>
         <p className="kicker">{categoryLabel}</p><h1>{route.heading}</h1><p className="lede">{route.description}</p>
       </div>
     </section>
     <div className="container collection-body">
       <SearchForm initial={filters} onApply={apply} action={route.path} inventory={pool}/>
-      {route.areaGuide && <AreaGuide route={route}/>}
-      {route.path === '/turkish-citizenship' && <section className="citizenship-note">
+      {route.areaGuide && <div data-reveal><AreaGuide route={route}/></div>}
+      {route.path === '/turkish-citizenship' && <section className="citizenship-note" data-reveal>
         <h2>Considering property as part of a citizenship application?</h2>
         <p>An independent adviser can check whether your circumstances and the individual property meet current requirements. Share the property reference with Mavi and review the official documentation before committing.</p>
         <a className="text-link" href={withBase('/legal-matters')}>Review the legal checklist</a>
       </section>}
-      <div className="result-bar">
+      <div className="result-bar" data-intro>
         <div><span aria-live="polite">{items.length} {items.length === 1 ? 'property' : 'properties'}</span>
           {Object.values(filters).some(Boolean) && <button type="button" className="results-clear" onClick={() => apply({...emptyFilters})}>Clear filters</button>}</div>
         <div className="result-controls">
@@ -213,20 +215,22 @@ function Collection({route, saved, toggle}) {
 }
 
 function Detail({item,saved,toggle}) {
+  const pageRef = useRef(null);
+  usePageMotion(pageRef, [item.id]);
   const savedItem = saved.includes(item.id);
   const archived = archivedListing(item);
   const comparable = listings.filter(other => other.id!==item.id && !archivedListing(other) && (other.status==='For Rent')===(item.status==='For Rent'))
     .sort((a,b) => Number(b.area===item.area)*2+Number(b.type===item.type) - Number(a.area===item.area)*2-Number(a.type===item.type)).slice(0,3);
   const message = 'Hello Mavi Estate, I would like to arrange a viewing for property ' + item.id + '.';
-  return <main id="main" className="container interior listing-page">
-    <Breadcrumb label={item.id} parent={item.status==='For Rent' ? {name:'Rent',path:withBase('/property-for-rent')} : {name:'Properties',path:withBase('/properties')}}/>
-    <header className="listing-heading">
+  return <main id="main" className="container interior listing-page" ref={pageRef}>
+    <div data-intro><Breadcrumb label={item.id} parent={item.status==='For Rent' ? {name:'Rent',path:withBase('/property-for-rent')} : {name:'Properties',path:withBase('/properties')}}/></div>
+    <header className="listing-heading" data-intro>
       <div><p className="kicker">{item.area ? item.area + ' · ' : ''}REF {item.id}</p><h1>{item.name}</h1></div>
       <div className="listing-price"><strong>{priceLabel(item.price)}</strong>{item.status && <Badge label={item.status}/>}</div>
     </header>
-    <Gallery item={item}/>
+    <div data-intro><Gallery item={item}/></div>
     <ListingNavigation item={item}/>
-    <div className="listing-body">
+    <div className="listing-body" data-reveal>
       <div>
         <ListingOverview item={item}/>
         <ListingFeatures item={item}/>
@@ -240,18 +244,20 @@ function Detail({item,saved,toggle}) {
 
       </aside>
     </div>
-    <ListingLocation item={item}/>
-    <ValuationSection item={item}/>
-    {comparable.length>0 && <section className="similar-listings"><div className="section-heading"><h2>You might also like.</h2><Button label="Back to properties" className="quiet-action" href={withBase(item.status==='For Rent' ? '/property-for-rent' : '/properties')}/></div>
+    <div data-reveal><ListingLocation item={item}/></div>
+    <div data-reveal><ValuationSection item={item}/></div>
+    {comparable.length>0 && <section className="similar-listings" data-reveal><div className="section-heading"><h2>You might also like.</h2><Button label="Back to properties" className="quiet-action" href={withBase(item.status==='For Rent' ? '/property-for-rent' : '/properties')}/></div>
       <PropertyGrid items={comparable} saved={saved} toggle={toggle}/></section>}
   </main>;
 }
 
 function Contact() {
-  return <main id="main" className="contact-page">
+  const pageRef = useRef(null);
+  usePageMotion(pageRef);
+  return <main id="main" className="contact-page" ref={pageRef}>
     <section className="contact-cover">
       <div className="container contact-layout">
-        <div className="contact-copy"><Breadcrumb label="Contact"/><p className="kicker">MAVI REAL ESTATE</p><h1>Let’s talk <em>property.</em></h1>
+        <div className="contact-copy" data-intro><Breadcrumb label="Contact"/><p className="kicker">MAVI REAL ESTATE</p><h1>Let’s talk <em>property.</em></h1>
           <p className="lede">The Kalkan office meets clients by appointment. Get in touch to discuss buying, selling or arrange viewings around your trip.</p>
           <div className="contact-list">
             <a href={telephone}><Phone size={19}/><span><small>Call our team</small>{phone}</span></a>
@@ -262,21 +268,23 @@ function Contact() {
             <a className="contact-inquiry-link" href={withBase('/quick-inquiry')}>Write an inquiry</a></div>
           <SocialLinks/>
         </div>
-        <figure className="contact-image"><img src={withBase('/media/contact-source.webp')} alt=""/><figcaption>Kalkan, Antalya</figcaption></figure>
+        <figure className="contact-image" data-reveal><img src={withBase('/media/contact-source.webp')} alt=""/><figcaption>Kalkan, Antalya</figcaption></figure>
       </div>
     </section>
   </main>;
 }
 
 function LocationPage({route}) {
-  return <main id="main" className="location-page">
+  const pageRef = useRef(null);
+  usePageMotion(pageRef, [route.heading]);
+  return <main id="main" className="location-page" ref={pageRef}>
     <section className="location-cover">
-      <div className="container">
+      <div className="container" data-intro>
         <Breadcrumb label="Locations"/><p className="kicker">THE NEIGHBOURHOODS</p>
         <h1>{route.heading}</h1><p className="lede">Explore homes around Kalkan’s harbour, across Kalamar Bay and in the hill villages above town.</p><Places/>
       </div>
     </section>
-    <section className="container region-directory"><h2>Browse all areas.</h2><div className="directory-grid">
+    <section className="container region-directory" data-reveal><h2>Browse all areas.</h2><div className="directory-grid">
       {liveMenu.locations.map(group => <div key={group.title}><h3>{group.title}</h3><ul>{group.links.map(([label,path]) => <li key={path}><a href={withBase(path)}>{label}</a></li>)}</ul></div>)}
     </div></section>
   </main>;
@@ -291,9 +299,11 @@ function SocialLinks() {
 }
 
 function EditorialPage({route}) {
+  const pageRef = useRef(null);
+  usePageMotion(pageRef, [route.rawPath || route.path, route.heading]);
   const journal = route.kind === 'journal';
-  return <main id="main" className="editorial-page">
-    <section className={'editorial-top' + (route.image.endsWith('kemal.webp') ? ' portrait-top' : '')}>
+  return <main id="main" className="editorial-page" ref={pageRef}>
+    <section className={'editorial-top' + (route.image.endsWith('kemal.webp') ? ' portrait-top' : '')} data-intro>
       <div className="container editorial-layout">
         <div><Breadcrumb label={route.kicker} parent={route.kind==='article' ? {name:'Journal',path:withBase('/blogs')} : null}/>
           <p className="kicker">{route.kicker}</p><h1>{route.heading}</h1><p className="lede">{route.description}</p>
@@ -301,9 +311,9 @@ function EditorialPage({route}) {
         <img src={withBase(route.image)} alt={route.image.endsWith('kemal.webp') ? 'Kemal Safyurek, Mavi Real Estate' : ''}/>
       </div>
     </section>
-    {journal ? <section className="container journal-entry">
+    {journal ? <section className="container journal-entry" data-reveal>
       <a href={withBase(buyGuide)}><img src={withBase('/media/buying-source.webp')} alt="" loading="lazy"/><div><p className="kicker">BUYING IN KALKAN</p><h2>Property for sale in Kalkan, Türkiye.</h2><span className="text-link">Read the guide</span></div></a>
-    </section> : <div className="container editorial-article">
+    </section> : <div className="container editorial-article" data-reveal>
       {route.kind === 'inquiry' ? <InquiryForm/> :
         route.kind === 'testimonials' ? <article className="testimonial-list">{testimonials.map(({name,text}) =>
           <figure key={name}><blockquote>{text.split(/\n+/).filter(Boolean).map((paragraph,index) => <p key={index}>{paragraph}</p>)}</blockquote><figcaption>{name}</figcaption></figure>)}</article> :
