@@ -10,20 +10,28 @@ export function useEditorialMotion(root) {
       media = gsap.matchMedia(root.current);
       media.add('(prefers-reduced-motion: no-preference)', () => {
         gsap.from('[data-intro]', {
-          opacity: .85, y: 12, duration: .62, stagger: .07, ease: 'power3.out',
+          opacity: 0, y: 22, duration: .78, stagger: .09, ease: 'power3.out',
           clearProps: 'opacity,transform',
         });
         root.current.querySelectorAll('[data-reveal]').forEach(element => {
           gsap.from(element, {
-            opacity: .25, y: 30, duration: .85, ease: 'power3.out',
+            opacity: 0, y: 32, duration: .85, ease: 'power3.out',
             clearProps: 'opacity,transform',
-            scrollTrigger: {trigger: element, start: 'top 94%', once: true},
+            scrollTrigger: {trigger: element, start: 'top 92%', once: true},
           });
         });
+        const propertyCards = root.current.querySelectorAll('.featured .property');
+        if (propertyCards.length) {
+          gsap.from(propertyCards, {
+            opacity: 0, y: 32, duration: .75, stagger: .11, ease: 'power3.out',
+            clearProps: 'opacity,transform',
+            scrollTrigger: {trigger: '.featured .property-grid', start: 'top 90%', once: true},
+          });
+        }
       }, root.current);
       media.add('(min-width: 900px) and (prefers-reduced-motion: no-preference)', () => {
         gsap.to(root.current.querySelector('.hero-images'), {
-          yPercent: 7, ease: 'none', scrollTrigger: {
+          yPercent: 8, ease: 'none', scrollTrigger: {
             trigger: root.current.querySelector('.hero'),
             start: 'top top', end: 'bottom top', scrub: true,
           },
@@ -46,8 +54,8 @@ export function useImageMotion(image, index, direction) {
     import('gsap').then(({gsap}) => {
       if (!alive || !node) return;
       animation = gsap.fromTo(node,
-        {opacity: .45, x: 14 * (direction?.current ?? 1), scale: 1.045},
-        {opacity: 1, x: 0, scale: 1, duration: .58, ease: 'power2.out', clearProps: 'opacity,transform'},
+        {opacity: .35, x: 18 * (direction?.current ?? 1), scale: 1.05},
+        {opacity: 1, x: 0, scale: 1, duration: .65, ease: 'power3.out', clearProps: 'opacity,transform'},
       );
     });
     return () => { alive = false; animation?.revert(); };

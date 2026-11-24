@@ -43,7 +43,7 @@ function Hero() {
           <p className="hero-eyebrow" data-intro>Kalkan, Türkiye</p>
           <h1 id="home-hero-title" data-intro>Find your place <em>in Kalkan.</em></h1>
           <p className="hero-description" data-intro>Explore villas, apartments and land for sale on Türkiye’s Mediterranean coast.</p>
-          <a className="hero-link" href="#featured-title" data-intro>Discover the collection</a>
+          <a className="hero-link" href="#featured-title" data-intro>Discover the collection <ChevronDown size={15} className="hero-link-arrow" aria-hidden="true"/></a>
         </div>
         <div className="hero-caption" aria-label="Coastline photographs">
           <span className="frame-caption" aria-live="polite"><MapPin size={16} aria-hidden="true"/>{heroViews[current].caption}</span>
