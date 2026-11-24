@@ -57,6 +57,7 @@ export function matchesBudget(item, filters) {
 
 function useDisclosure() {
   const [open, setOpen] = useState('');
+  const [direction, setDirection] = useState({});
   const root = useRef(null);
   const trigger = useRef(null);
   function close(refocus = false) {
@@ -72,17 +73,14 @@ function useDisclosure() {
 
     const frameId = window.requestAnimationFrame(() => {
       const panel = root.current?.querySelector('.selector-panel:not([hidden])');
-      if (panel && root.current) {
-        const formRect = root.current.getBoundingClientRect();
+      if (panel) {
         const panelRect = panel.getBoundingClientRect();
-        const margin = 28;
-        const overflow = (panelRect.bottom + margin) - window.innerHeight;
-        if (overflow > 0) {
-          const maxScroll = Math.max(0, formRect.top - 84);
-          const scrollAmount = Math.min(overflow, maxScroll);
-          if (scrollAmount > 4) {
-            window.scrollBy({ top: Math.ceil(scrollAmount), behavior: 'smooth' });
-          }
+        if (panelRect.bottom > window.innerHeight - 20) {
+          const overflow = panelRect.bottom - window.innerHeight + 24;
+          window.scrollBy({ top: Math.ceil(overflow), behavior: 'smooth' });
+        } else if (panelRect.top < 84) {
+          const underflow = panelRect.top - 84 - 12;
+          window.scrollBy({ top: Math.floor(underflow), behavior: 'smooth' });
         }
       }
     });
@@ -93,10 +91,19 @@ function useDisclosure() {
     };
   }, [open]);
   return {
-    open, root, close,
+    open, root, close, direction,
     toggle(key, event) {
       trigger.current = event.currentTarget;
-      setOpen(current => current === key ? '' : key);
+      if (open === key) {
+        setOpen('');
+        return;
+      }
+      const rect = event.currentTarget.getBoundingClientRect();
+      const spaceBelow = window.innerHeight - rect.bottom;
+      const spaceAbove = rect.top;
+      const prefersUp = spaceBelow < 330 && spaceAbove > 240;
+      setDirection(curr => ({ ...curr, [key]: prefersUp ? 'up' : 'down' }));
+      setOpen(key);
     },
     onBlur(event) {
       if (open && event.relatedTarget && !root.current?.contains(event.relatedTarget)) close();
@@ -113,7 +120,8 @@ function useDisclosure() {
 function Selector({name, label, value, icon:Icon, control, children}) {
   const id = useId();
   const active = control.open === name;
-  return <div className={'select-cell select-' + name}>
+  const isUp = control.direction[name] === 'up';
+  return <div className={'select-cell select-' + name + (isUp ? ' dropup' : '')}>
     <button type="button" className="select-trigger" aria-label={label + ': ' + value} aria-expanded={active} aria-controls={id}
       onClick={event => control.toggle(name,event)}>
       <Icon size={21} aria-hidden="true"/>
